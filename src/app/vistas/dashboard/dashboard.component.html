@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+
+<div class="container">
+
+    <h3>Lista de aviones</h3><br>
+
+    <button type="button" class="btn btn-dark" (click)="nuevoAvion()">Nuevo avión</button><br><br>
+
+    <table class="table ">
+        
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Compañía</th>
+        <th scope="col">Cant. máxima pasajeros</th>
+        <th scope="col">Peso (Kg)</th>
+        <th scope="col">Nivel ruido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let avion of aviones" >
+        <th scope="row">{{ avion.id }}</th>
+        <td>{{ avion.compania }}</td>
+        <td>{{ avion.cantidadMaxPasajeros }}</td>
+        <td>{{ avion.peso }}</td>
+        <td>{{ avion.ruido }}</td>
+        <td><button type="button" class="btn btn-danger" (click)="eliminarAvion(avion.id)">Eliminar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- (click)="editarAvion(avion.id)" -->
+
+<app-footer></app-footer>
