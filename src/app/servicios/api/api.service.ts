@@ -28,6 +28,11 @@ export class ApiService {
     return this.http.get<ListaAvionesI[]>(direccion);
   }
 
+  getPlaneById():Observable<AvionI[]>{
+    let direccion = this.url + "aviones/getPlanesById/";
+    return this.http.get<AvionI[]>(direccion);
+  }
+
   getPlane(id: any):Observable<AvionI>{
     let direccion = this.url + "aviones/getPlanesById/"+ id;
     return this.http.get<AvionI>(direccion);
@@ -42,6 +47,11 @@ export class ApiService {
   getAllFlights():Observable<ListaVuelosI[]>{
     let direccion = this.url + "vuelos/getFlights";
     return this.http.get<ListaVuelosI[]>(direccion);
+  }
+
+  getFlightsById():Observable<AvionI[]>{
+    let direccion = this.url + "vuelos/getFlightById/";
+    return this.http.get<AvionI[]>(direccion);
   }
 
   deleteFlight(id:any):Observable<AvionI>{
