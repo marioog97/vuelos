@@ -13,26 +13,26 @@ export class ListasComponent implements OnInit {
 
   vuelos: ListaVuelosI[] = [];
 
-  constructor(private api:ApiService, private router:Router) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-    this.api.getAllFlights().subscribe(data =>{
-      this.vuelos=data;
+    this.api.getAllFlights().subscribe(data => {
+      this.vuelos = data;
     });
   }
 
-  nuevoVuelo(){
+  nuevoVuelo() {
     this.router.navigate(['nuevovuelo']);
   }
-  eliminarVuelo(id: any){
+  eliminarVuelo(id: any) {
     console.log("Pulsado " + id);
     this.api.deleteFlight(id);
   }
 
-  buscarVuelo(){
+  buscarVuelo() {
     var inputValue = (<HTMLInputElement>document.getElementById("inputId")).value;
-    this.api.getFlightById(inputValue).subscribe(data =>{
+    this.api.getFlightById(inputValue).subscribe(data => {
       console.log(data);
     });
-}
+  }
 }

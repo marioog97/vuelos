@@ -1,4 +1,4 @@
-export interface AvionI{
+export interface AvionI {
     id: number;
     compania: string;
     cantidadMaxPasajeros: number;

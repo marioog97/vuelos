@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 })
 export class NuevoComponent implements OnInit {
 
-  
-  constructor(private api:ApiService, private router:Router) { }
 
-nuevoForm = new FormGroup({
+  constructor(private api: ApiService, private router: Router) { }
+
+  nuevoForm = new FormGroup({
     id: new FormControl(''),
     compania: new FormControl(''),
     cantidadMaxPasajeros: new FormControl(''),
@@ -25,7 +25,7 @@ nuevoForm = new FormGroup({
   ngOnInit(): void {
   }
 
-  postForm(form: AvionI){
+  postForm(form: AvionI) {
     console.log(form);
   }
 

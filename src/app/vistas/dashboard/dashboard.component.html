@@ -3,21 +3,21 @@
 
 <div class="container">
 
-    <h3>Lista de aviones</h3><br>
+  <h3>Lista de aviones</h3><br>
 
-    <button type="button" class="btn btn-dark" (click)="nuevoAvion()">Nuevo avión</button><br><br>
+  <button type="button" class="btn btn-dark" (click)="nuevoAvion()">Nuevo avión</button><br><br>
 
-    <div class="form-group col-md-2">
-      <form (ngSubmit)="buscarAvion()">
-        Buscar por ID
+  <div class="form-group col-md-2">
+    <form (ngSubmit)="buscarAvion()">
+      Buscar por ID
       <input type="text" id="inputId" class="form-control" placeholder="ID avión">
       <button type="submit" class="btn btn-dark">Buscar</button>
-      </form>
-      
-    </div>
-<br>
-    <table class="table table-hover">
-        
+    </form>
+
+  </div>
+  <br>
+  <table class="table table-hover">
+
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -28,13 +28,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let avion of aviones" >
+      <tr *ngFor="let avion of aviones">
         <th scope="row">{{ avion.id }}</th>
         <td>{{ avion.compania }}</td>
         <td>{{ avion.cantidadMaxPasajeros }}</td>
         <td>{{ avion.peso }}</td>
         <td>{{ avion.ruido }}</td>
-        <td><button type="button" class="btn btn-danger"  (click)="eliminarAvion(avion.id)">Eliminar</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="eliminarAvion(avion.id)">Eliminar</button></td>
       </tr>
     </tbody>
   </table>

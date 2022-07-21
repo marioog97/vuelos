@@ -12,7 +12,7 @@ import { FormGroup, FormControl, Validator } from '@angular/forms';
 })
 export class EditarComponent implements OnInit {
 
-  constructor(private activerouter:ActivatedRoute, private router:Router, private api:ApiService) { }
+  constructor(private activerouter: ActivatedRoute, private router: Router, private api: ApiService) { }
 
   datosAvion: AvionI | any;
 
@@ -26,14 +26,14 @@ export class EditarComponent implements OnInit {
 
   ngOnInit(): void {
     let avionId = this.activerouter.snapshot.paramMap.get('id');
-    console.log("hola"+avionId);
-    this.api.getPlane(avionId).subscribe((data: any) =>{
-      
+    console.log("hola" + avionId);
+    this.api.getPlane(avionId).subscribe((data: any) => {
+
     });
   }
 
-  eliminarAvion(){
-    
+  eliminarAvion() {
+
   }
 
 }

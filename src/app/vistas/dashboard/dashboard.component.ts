@@ -1,9 +1,9 @@
+import { ListaAvionesI } from './../../modelos/listaAviones.interface';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/servicios/api/api.service';
 
 import { Router } from '@angular/router';
 
-import { ListaAvionesI } from 'src/app/modelos/listaAviones.interface';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,30 +14,30 @@ export class DashboardComponent implements OnInit {
 
   aviones: ListaAvionesI[] = [];
 
-  constructor(private api:ApiService, private router:Router) { }
+  constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
-    this.api.getAllPlanes().subscribe(data =>{
-      this.aviones=data;
+    this.api.getAllPlanes().subscribe(data => {
+      this.aviones = data;
     })
   }
 
-  editarAvion(id: any){
+  editarAvion(id: any) {
     this.router.navigate(['editar', id]);
   }
 
-  nuevoAvion(){
+  nuevoAvion() {
     this.router.navigate(['nuevo']);
   }
 
-  eliminarAvion(id: any){
+  eliminarAvion(id: any) {
     console.log("Pulsado " + id);
     this.api.deletePlane(id);
   }
 
-  buscarAvion(){
+  buscarAvion() {
     var inputValue = (<HTMLInputElement>document.getElementById("inputId")).value;
-    this.api.getPlaneById(inputValue).subscribe(data =>{
+    this.api.getPlaneById(inputValue).subscribe(data => {
       console.log(data);
     });
   }

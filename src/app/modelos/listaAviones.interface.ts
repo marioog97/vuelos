@@ -1,4 +1,4 @@
-export interface ListaAvionesI{
+export interface ListaAvionesI {
     id: number;
     compania: string;
     cantidadMaxPasajeros: number;
