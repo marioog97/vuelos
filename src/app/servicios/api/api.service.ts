@@ -42,6 +42,10 @@ export class ApiService {
     return this.http.get<AvionI>(direccion);
   }
 
+  postPlane(avion: AvionI): Observable<AvionI>{
+    return this.http.post<AvionI>(this.url + "aviones/addPlane", avion);
+  }
+
   deletePlane(id: any): Observable<AvionI> {
     console.log("Entra ID: " + id);
     let direccion = this.url + "aviones/deletePlane/" + id;
@@ -59,6 +63,10 @@ export class ApiService {
     let direccion = this.url + "vuelos/getFlightById/" + id;
     console.log(direccion);
     return this.http.get<AvionI[]>(direccion);
+  }
+
+  postFlight(vuelo: ListaVuelosI): Observable<ListaVuelosI>{
+    return this.http.post<ListaVuelosI>(this.url + "aviones/addPlane", vuelo);
   }
 
   deleteFlight(id: any): Observable<ListaVuelosI> {

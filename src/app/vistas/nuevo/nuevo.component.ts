@@ -1,4 +1,4 @@
-import { AvionI } from './../../modelos/avion.interface';
+import { AvionI } from 'src/app/modelos/avion.interface';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validator } from '@angular/forms';
 import { ApiService } from 'src/app/servicios/api/api.service';
@@ -25,8 +25,27 @@ export class NuevoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  postForm(form: AvionI) {
-    console.log(form);
+
+  postForm() {
+    var inputCompania = (<HTMLInputElement>document.getElementById("compañia")).value;
+    var inputCantidad = (<HTMLInputElement>document.getElementById("cantPas")).value;
+    var inputPeso = (<HTMLInputElement>document.getElementById("peso")).value;
+    var inputRuido = (<HTMLInputElement>document.getElementById("inputState")).value;
+
+    let avion: AvionI = {
+      id: 60,
+      compania: inputCompania,
+      cantidadMaxPasajeros: Number(inputCantidad),
+      peso: Number(inputPeso),
+      ruido: Number(inputRuido)
+    }
+
+    console.log(avion);
+
+    this.api.postPlane(avion).subscribe(data =>{
+      console.log(data);
+    });
+
   }
 
 }
