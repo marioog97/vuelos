@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/servicios/api/api.service';
+import { ListaVuelosI } from 'src/app/modelos/listaVuelos.interface';
+
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listas',
@@ -7,13 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListasComponent implements OnInit {
 
-  constructor() { }
+  vuelos: ListaVuelosI[] = [];
+
+  constructor(private api:ApiService, private router:Router) { }
 
   ngOnInit(): void {
+    this.api.getAllFlights().subscribe(data =>{
+      this.vuelos=data;
+    });
   }
 
   nuevoVuelo(){
-    
+    this.router.navigate(['nuevovuelo']);
+  }
+  eliminarVuelo(id: any){
+    console.log("Pulsado " + id);
+    this.api.deleteFlight(id);
   }
 
 }

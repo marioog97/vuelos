@@ -1,3 +1,4 @@
+import { ListaVuelosI } from './../../modelos/listaVuelos.interface';
 import { Injectable } from '@angular/core';
 import { LoginI } from 'src/app/modelos/login.interface';
 import { ResponseI } from 'src/app/modelos/response.interface';
@@ -35,6 +36,17 @@ export class ApiService {
   deletePlane(id:any):Observable<AvionI>{
     console.log("Entra ID: "+ id);
     let direccion = this.url + "aviones/deletePlane/" + id;
+    return this.http.delete<AvionI>(direccion);
+  }
+
+  getAllFlights():Observable<ListaVuelosI[]>{
+    let direccion = this.url + "vuelos/getFlights";
+    return this.http.get<ListaVuelosI[]>(direccion);
+  }
+
+  deleteFlight(id:any):Observable<AvionI>{
+    console.log("Entra ID: "+ id);
+    let direccion = this.url + "vuelos/deleteFlight/" + id;
     return this.http.delete<AvionI>(direccion);
   }
 

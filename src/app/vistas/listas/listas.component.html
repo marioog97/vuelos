@@ -23,14 +23,16 @@
       </tr>
     </thead>
     <tbody>
-      <!-- <tr *ngFor="let vuelo of vuelos" >
-        <th scope="row">{{ vuelo. }}</th>
-        <td>{{ vuelo. }}</td>
-        <td>{{ vuelo. }}</td>
-        <td>{{ vuelo. }}</td>
-        <td>{{ vuelo. }}</td>
-        <td><button type="button" class="btn btn-danger" (click)="eliminarVuelo(avion.id)">Eliminar</button></td>
-      </tr> -->
+      <tr *ngFor="let vuelo of vuelos" >
+        <th scope="row">{{ vuelo.id }}</th>
+        <td>{{ vuelo.origen }}</td>
+        <td>{{ vuelo.destino }}</td>
+        <td>{{ vuelo.id }}</td>
+        <td>{{ vuelo.horaSalida }}</td>
+        <td>{{ vuelo.horaLlegada }}</td>
+        <td>{{ vuelo.numPasajeros }}</td>
+        <td><button type="button" class="btn btn-danger" (click)="eliminarVuelo(vuelo.id)">Eliminar</button></td>
+      </tr> 
     </tbody>
   </table>
 </div>
