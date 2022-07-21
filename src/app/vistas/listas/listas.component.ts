@@ -29,4 +29,10 @@ export class ListasComponent implements OnInit {
     this.api.deleteFlight(id);
   }
 
+  buscarVuelo(){
+    var inputValue = (<HTMLInputElement>document.getElementById("inputId")).value;
+    this.api.getFlightById(inputValue).subscribe(data =>{
+      console.log(data);
+    });
+}
 }

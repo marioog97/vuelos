@@ -35,5 +35,12 @@ export class DashboardComponent implements OnInit {
     this.api.deletePlane(id);
   }
 
+  buscarAvion(){
+    var inputValue = (<HTMLInputElement>document.getElementById("inputId")).value;
+    this.api.getPlaneById(inputValue).subscribe(data =>{
+      console.log(data);
+    });
+  }
+
 
 }

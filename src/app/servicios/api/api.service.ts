@@ -19,45 +19,53 @@ export class ApiService {
 
   loginByEmail(form:LoginI):Observable<ResponseI>{
     
-    let direccion = this.url + "auth";
+    let direccion = this.url;
+    console.log(direccion);
     return this.http.post<ResponseI>(direccion, form);
   }
 
   getAllPlanes():Observable<ListaAvionesI[]>{
     let direccion = this.url + "aviones/getPlanes";
+    console.log(direccion);
     return this.http.get<ListaAvionesI[]>(direccion);
   }
 
-  getPlaneById():Observable<AvionI[]>{
-    let direccion = this.url + "aviones/getPlanesById/";
+  getPlaneById(id: any):Observable<AvionI[]>{
+    let direccion = this.url + "aviones/getPlanesById/" + id;
+    console.log(direccion);
     return this.http.get<AvionI[]>(direccion);
   }
 
   getPlane(id: any):Observable<AvionI>{
     let direccion = this.url + "aviones/getPlanesById/"+ id;
+    console.log(direccion);
     return this.http.get<AvionI>(direccion);
   }
 
   deletePlane(id:any):Observable<AvionI>{
     console.log("Entra ID: "+ id);
     let direccion = this.url + "aviones/deletePlane/" + id;
+    console.log(direccion);
     return this.http.delete<AvionI>(direccion);
   }
 
   getAllFlights():Observable<ListaVuelosI[]>{
     let direccion = this.url + "vuelos/getFlights";
+    console.log(direccion);
     return this.http.get<ListaVuelosI[]>(direccion);
   }
 
-  getFlightsById():Observable<AvionI[]>{
-    let direccion = this.url + "vuelos/getFlightById/";
+  getFlightById(id: any):Observable<AvionI[]>{
+    let direccion = this.url + "vuelos/getFlightById/" + id;
+    console.log(direccion);
     return this.http.get<AvionI[]>(direccion);
   }
 
-  deleteFlight(id:any):Observable<AvionI>{
+  deleteFlight(id:any):Observable<ListaVuelosI>{
     console.log("Entra ID: "+ id);
     let direccion = this.url + "vuelos/deleteFlight/" + id;
-    return this.http.delete<AvionI>(direccion);
+    console.log(direccion);
+    return this.http.delete<ListaVuelosI>(direccion);
   }
 
 }

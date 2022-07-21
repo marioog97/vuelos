@@ -1,11 +1,51 @@
 <app-header></app-header>
 
 <div class="container">
+    
 
-    <button type="button" class="btn btn-primary" (click)="eliminarAvion()">Borrar registro</button>
 
+        <!-- <form [formGroup]="nuevoForm" (ngSubmit)="postForm(nuevoForm.value)" > -->
+          <form>
+            <div class="form-row">
+              <div class="form-group col-md-4">
+                <label for="inputCompañia">Compañía</label>
+                <input type="text" class="form-control" placeholder="Nombre">
+              </div>
+              <div class="form-group col-md-2">
+                <label for="inputCantMaxPas">Cantidad máxima de pasajeros</label>
+                <input type="text" class="form-control" placeholder="Número">
+              </div>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputPeso">Peso del avión</label>
+              <input type="number" class="form-control" placeholder="Peso en kilogramos">
+            </div>
+            <div class="form-row">
+              
+              <div class="form-group col-md-2">
+                <label for="inputState">Nivel de ruido del avión</label>
+                <select id="inputState" class="form-control">
+                  <option selected>1</option>
+                  <option selected>2</option>
+                  <option selected>3</option>
+                  <option selected>4</option>
+                  <option selected>5</option>
+                  <option selected>6</option>
+                  <option selected>7</option>
+                  <option selected>8</option>
+                  <option selected>9</option>
+                  <option selected>10</option>
+                </select>
+              </div>
+              
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Editar</button>
+            <button type="submit" class="btn btn-warning">Limpiar campos</button>
+          </form>
+
+   
 
 </div>
-
 
 <app-footer></app-footer>
