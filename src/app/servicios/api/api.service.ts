@@ -46,11 +46,11 @@ export class ApiService {
     return this.http.post<AvionI>(this.url + "aviones/addPlane", avion);
   }
 
-  deletePlane(id: any): Observable<AvionI> {
+  deletePlane(id: number): Observable<unknown> {
     console.log("Entra ID: " + id);
     let direccion = this.url + "aviones/deletePlane/" + id;
     console.log(direccion);
-    return this.http.delete<AvionI>(direccion);
+    return this.http.delete<AvionI>(direccion).pipe();
   }
 
   getAllFlights(): Observable<ListaVuelosI[]> {

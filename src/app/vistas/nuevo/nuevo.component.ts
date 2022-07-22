@@ -33,7 +33,7 @@ export class NuevoComponent implements OnInit {
     var inputRuido = (<HTMLInputElement>document.getElementById("inputState")).value;
 
     let avion: AvionI = {
-      id: 60,
+      id: 0,
       compania: inputCompania,
       cantidadMaxPasajeros: Number(inputCantidad),
       peso: Number(inputPeso),
@@ -46,6 +46,10 @@ export class NuevoComponent implements OnInit {
       console.log(data);
     });
 
+  }
+
+  salir(){
+    this.router.navigate(['dashboard']);
   }
 
 }

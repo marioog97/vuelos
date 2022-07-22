@@ -8,34 +8,34 @@
       <div class="form-row">
         <div class="form-group col-md-4">
           <label for="inputOrigen">Origen</label>
-          <input type="text" class="form-control" placeholder="Nombre">
+          <input type="text" id="inputOrigen" class="form-control" placeholder="Nombre">
         </div>
         <div class="form-group col-md-4">
           <label for="inputDestino">Destino</label>
-          <input type="text" class="form-control" placeholder="Nombre">
+          <input type="text" id="inputDestino" class="form-control" placeholder="Nombre">
         </div>
         <div class="form-group col-md-2">
-          <label for="inputCantMaxPas">ID del avión</label>
-          <input type="number" class="form-control" placeholder="Número">
+          <label for="idAvion">ID del avión</label>
+          <input type="number" id="idAvion" class="form-control" placeholder="Número">
         </div>
       </div>
       <div class="form-group col-md-2">
         <label for="inputHoraLlegada">Hora de llegada</label>
-        <input type="datetime" class="form-control" placeholder="Hora">
+        <input type="datetime" id="inputHoraLlegada" class="form-control" placeholder="Hora">
       </div>
       <div class="form-group col-md-2">
         <label for="inputHoraSalida">Hora de salida</label>
-        <input type="datetime" class="form-control" placeholder="Hora">
+        <input type="datetime" id="inputHoraSalida" class="form-control" placeholder="Hora">
       </div>
       <div class="form-row">
         <div class="form-group col-md-2">
           <label for="inputCantMaxPas">Número de pasajeros</label>
-          <input type="number" class="form-control" placeholder="Número">
+          <input type="number" id="inputCantMaxPas" class="form-control" placeholder="Número">
         </div>
 
       </div>
-      <button type="submit" class="btn btn-primary">Guardar</button>
-      <button type="submit" class="btn btn-warning">Limpiar campos</button>
+      <button type="submit" (click)="postForm()" class="btn btn-primary">Guardar</button>
+      <button type="submit" (click)="salir()" class="btn btn-warning">Salir</button>
     </form>
 
 
